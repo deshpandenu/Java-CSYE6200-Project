@@ -1,0 +1,12 @@
+package edu.neu.csye6200;
+
+public abstract class AbstractGameObjectFactory {
+
+	private int x ;
+	private int y; 
+	private ID id;
+	private Handler handler;
+	public abstract GameObject generate(x,y,id,handler);
+	
+	
+}

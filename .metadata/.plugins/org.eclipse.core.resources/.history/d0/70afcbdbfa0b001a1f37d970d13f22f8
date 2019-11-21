@@ -1,0 +1,14 @@
+package edu.neu.csye6200;
+
+public abstract class AbstractGameObjectFactory {
+
+	
+	public static GameObject getObject(int x,int y,ID id, Handler handler) {
+		return new GameObject(x,y,id,handler);
+	}
+	
+	
+
+}
+	
+	

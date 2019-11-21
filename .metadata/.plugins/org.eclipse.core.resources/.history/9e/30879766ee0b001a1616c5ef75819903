@@ -1,0 +1,15 @@
+package edu.neu.csye6200;
+
+public class BasicEnemyFactory implements AbstractGameObjectFactory {
+
+	int x;
+	int y;
+	Id id;
+	Handler handler;
+	@Override
+	public GameObject generate() {
+		// TODO Auto-generated method stub
+		return new BasicEnemy(x , y, id, handler);
+	}
+
+}

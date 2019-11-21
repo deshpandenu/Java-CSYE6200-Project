@@ -1,0 +1,36 @@
+package edu.neu.csye6200;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Random;
+
+public class Player extends GameObject {
+
+	Random r = new Random();
+	
+	public Player(int x, int y, ID id) {
+		super(x, y, id);
+		// TODO Auto-generated constructor stub
+		//velx = 1;
+		
+		velx =r.nextInt(5) + 1;
+		velY = r.nextInt(5);
+	}
+
+	@Override
+	public void tick() {
+		// TODO Auto-generated method stub
+		x += velx;
+		y += velY;
+		
+	}
+
+	@Override
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		g.setColor(Color.white);
+		g.fillRect(x, y, 32, 32);
+	}
+
+	
+}

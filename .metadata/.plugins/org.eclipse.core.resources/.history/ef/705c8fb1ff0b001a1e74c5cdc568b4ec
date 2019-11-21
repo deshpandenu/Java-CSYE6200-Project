@@ -1,0 +1,11 @@
+package edu.neu.csye6200;
+
+public class PlayerFactory extends AbstractGameObjectFactory{
+
+	@Override
+	public GameObject getObject(int x, int y, ID id, Handler handler) {
+		// TODO Auto-generated method stub
+		return new Player(x,y,id,handler);
+	}
+
+}

@@ -1,0 +1,12 @@
+package edu.neu.csye6200;
+
+public class FastEnemyObjectFactory extends AbstractGameObjectFactory{
+
+	@Override
+	public GameObject getObject(int x, int y, ID id, Handler handler) {
+		// TODO Auto-generated method stub
+		return new getObject(x,y,id,handler);
+	}
+
+	
+}

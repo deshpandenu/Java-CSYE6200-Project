@@ -1,0 +1,72 @@
+package edu.neu.csye6200;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class HUD {
+	public static int HEALTH =100;
+	private int greenValue = 255;
+	private int redValue = 0;
+	private int score =0;
+	private int enemies=1;
+	
+	
+	public static int getHEALTH() {
+		return HEALTH;
+	}
+
+	public static void setHEALTH(int hEALTH) {
+		HEALTH = hEALTH;
+	}
+
+	public int getGreenValue() {
+		return greenValue;
+	}
+
+	public void setGreenValue(int greenValue) {
+		this.greenValue = greenValue;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}	
+	
+	public void tick() {
+
+		HEALTH = Game.clamp(HEALTH, 0 , 100);
+		greenValue = Game.clamp(greenValue, 0, 255);
+		redValue = Game.clamp(redValue, 255, 0);
+		greenValue = (HEALTH*2)+25;
+		redValue = 255-greenValue;
+		score++;
+		if(score>500 && score%300==0)
+		{
+			enemies++;
+		}
+	}
+	
+	public void render(Graphics g)
+	{
+		g.setColor(Color.DARK_GRAY);
+		g.fillRect(15, 15, 200, 32);
+		g.setColor(new Color(redValue,greenValue,0));
+		g.fillRect(15, 15, HEALTH * 2, 32);
+		g.setColor(Color.white);
+		g.drawString("Health -: "+HEALTH,200,32);
+		g.drawRect(15, 15, 200, 32);
+		g.drawString("Your score  "+ score,20,64);
+		g.drawString("Number of enemies  "+ enemies,20,84);
+		
+
+		
+	}
+
+	
+
+	
+	
+}

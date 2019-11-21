@@ -1,0 +1,11 @@
+package edu.neu.csye6200;
+
+public class SmartEnemyFactory extends AbstractGameObjectFactory{
+
+	@Override
+	public GameObject getObject(int x, int y, ID id, Handler handler) {
+		// TODO Auto-generated method stub
+		return new SmartEnemy(x,y,id,handler);
+	}
+
+}

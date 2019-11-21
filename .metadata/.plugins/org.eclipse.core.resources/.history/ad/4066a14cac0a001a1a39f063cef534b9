@@ -1,0 +1,29 @@
+package edu.neu.csye6200;
+
+import java.util.Random;
+
+public class Spawn {
+	
+	private Handler handler;
+	private HUD hud;
+	private int score = 0;
+	private Random r= new Random();
+	
+	public Spawn(Handler handler, HUD hud)
+	{
+		this.handler = handler;
+		this.hud = hud;
+	}
+	
+	public void tick()
+	{
+		score++;
+		
+		if(score>200 && score%200==0)
+		{
+			if(score%300==0)handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH),r.nextInt(Game.HEIGHT),ID.BasicEnemy,handler));
+			else handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH),r.nextInt(Game.HEIGHT),ID.BasicEnemy,handler));
+		}
+	}
+
+}
