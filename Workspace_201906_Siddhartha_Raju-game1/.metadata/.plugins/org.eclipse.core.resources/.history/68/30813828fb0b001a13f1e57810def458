@@ -1,0 +1,27 @@
+package edu.neu.csye6200;
+
+import java.util.ArrayList;
+import java.util.List;
+import com.fazecast.jSerialComm.*;
+
+public class Ports {
+	
+	
+	public Ports() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<String> getMenuPorts()
+	{
+		List<String> portNames = new ArrayList<String>();
+		SerialPort ports[] = SerialPort.getCommPorts();
+		if(ports.length>0)
+		for (SerialPort port : ports)
+			portNames.add(port.getSystemPortName());
+		return portNames;
+	
+	}
+	
+
+}

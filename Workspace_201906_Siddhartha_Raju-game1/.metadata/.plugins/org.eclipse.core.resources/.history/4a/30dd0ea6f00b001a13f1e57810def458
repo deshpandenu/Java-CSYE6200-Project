@@ -1,0 +1,16 @@
+package edu.neu.csye6200;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ports {
+	
+	
+	public void getMenuPorts()
+	{
+		List<ConList> conlist = new ArrayList<>();
+		
+	}
+	
+
+}
